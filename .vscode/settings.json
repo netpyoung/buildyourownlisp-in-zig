@@ -1,4 +1,14 @@
 // file: .vscode/settings.json
 {
-    "zig.zls.enabled": "on"
+    "zig.zls.enabled": "on",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.idea": true,
+        "**/zig-out": true,
+        "**/.zig-cache": true,
+    }
 }
