@@ -22,24 +22,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/css/custom.css">
+        <link rel="stylesheet" href="theme/css/custom-21d68008.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -47,10 +46,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
+            window.path_to_searchindex_js = "searchindex-d3a90684.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="toc-49cc0e88.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -64,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div id="body-container">
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -93,12 +92,12 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -113,39 +112,39 @@
             }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -153,41 +152,41 @@
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
                         <a href="https://github.com/netpyoung/buildyourownlisp-in-zig" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
                         <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
                             <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
                             </div>
                         </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="들어가며"><a class="header" href="#들어가며">들어가며</a></h1>
 <ul>
@@ -199,9 +198,16 @@
 </ul>
 <p>Build Your Own Lisp가 c로 구현되어 있는데, zig로 한번 구현해보자.</p>
 <pre><code class="language-sh">$ zig version
-0.14.1
+0.15.2
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch01"><a class="header" href="#ch01">ch01</a></h1>
+<h2 id="015x"><a class="header" href="#015x">0.15.x</a></h2>
+<ul>
+<li>https://dev.to/bkataru/zig-0151-io-overhaul-understanding-the-new-readerwriter-interfaces-30oe</li>
+<li>ArrayList에 init(allocator) 부분이 삭제됨</li>
+<li>addExecutable에서 .root_source_file 안됨</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch01"><a class="header" href="#ch01">ch01</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter1_introduction">origin</a></li>
 </ul>
@@ -214,7 +220,8 @@
 <li>c를 알고, lisp를 알고있다.</li>
 <li>lisp를 만들어봐야지 하는 생각만 하다 zig를 한번 테스트겸 lisp를 작성.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch02"><a class="header" href="#ch02">ch02</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch02"><a class="header" href="#ch02">ch02</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter2_installation">origin</a>
 <ul>
@@ -226,7 +233,9 @@
 <ul>
 <li>텍스트 에디터 선택 및 C로 HelloWorld띄우기</li>
 </ul>
-<table><tr><th>C</th><th>Zig</th></tr><tr><td>
+<table>
+<tr><th>C</th><th>Zig</th></tr>
+<tr><td>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main(int argc, char** argv) {
@@ -240,10 +249,12 @@ pub fn main() void {
     std.debug.print("Hello, Zig!\n", .{});
 }
 </code></pre>
-</td></tr></table>
+</td></tr>
+</table>
+
 <h2 id="에디터"><a class="header" href="#에디터">에디터</a></h2>
 <ul>
-<li><a href="./vscode">vscode</a> 참고</li>
+<li><a href="vscode">vscode</a> 참고</li>
 </ul>
 <h2 id="srcch02zig"><a class="header" href="#srcch02zig">src/ch02.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -259,11 +270,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch03",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch03.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch03",
+        .root_module = root_module,
     });
 
     // zig-out/bin/ 아래에 실행파일을 복사해 줌.
@@ -275,7 +290,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch03"><a class="header" href="#ch03">ch03</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch03"><a class="header" href="#ch03">ch03</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter3_basics">origin</a></li>
 </ul>
@@ -311,11 +327,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch03",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch03.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch03",
+        .root_module = root_module,
     });
 
     // zig-out/bin/ 아래에 실행파일을 복사해 줌.
@@ -327,7 +347,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch04"><a class="header" href="#ch04">ch04</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch04"><a class="header" href="#ch04">ch04</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter4_interactive_prompt">origin</a>
 <ul>
@@ -369,7 +390,7 @@ sudo apt install libedit-dev
 <li><a href="https://formulae.brew.sh/formula/libedit">https://formulae.brew.sh/formula/libedit</a></li>
 <li><a href="https://thrysoee.dk/editline/">https://thrysoee.dk/editline/</a>
 <ul>
-<li>"editline/readline.h"</li>
+<li>“editline/readline.h”</li>
 </ul>
 </li>
 </ul>
@@ -391,11 +412,12 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     }
 
     std.debug.print("{s}", .{prompt});
+    // https://ziglang.org/download/0.15.1/release-notes.html#New-stdIoWriter-and-stdIoReader-API
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -403,7 +425,7 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     const mem = std.c.malloc(total_len).?;
     const out: [*c]u8 = @ptrCast(mem);
 
-    @memcpy(out[0..len], line);
+    @memcpy(out[0..len], line[0..len]);
     out[len] = 0; // null terminator
 
     return out;
@@ -461,11 +483,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch04",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch04.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch04",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -490,7 +516,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch05"><a class="header" href="#ch05">ch05</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch05"><a class="header" href="#ch05">ch05</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter5_languages">origin</a>
 <ul>
@@ -501,10 +528,16 @@ pub fn build(b: *std.Build) void {
 </ul>
 <h2 id="0x00-4"><a class="header" href="#0x00-4">0x00</a></h2>
 <p>저자가 작성한 <a href="https://github.com/orangeduck/mpc">mpc (Micro Parser Combinators)</a>의 사용 예.</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
 <tr><td>Parser Combinator</td><td>파서들 =&gt; 새로운 파서</td></tr>
 <tr><td>Parser</td><td>텍스트 =&gt; 파싱된 결과</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h2 id="srcch05zig"><a class="header" href="#srcch05zig">src/ch05.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -513,7 +546,7 @@ const c_mpc = @cImport({
     @cInclude("mpc.h");
 });
 
-const fpt_Free = *const fn (?*anyopaque) callconv(.C) void;
+const fpt_Free = *const fn (?*anyopaque) callconv(.c) void;
 
 fn doge_code() void {
     const Adjective: ?*c_mpc.mpc_parser_t = c_mpc.mpc_or(
@@ -584,11 +617,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch05",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch05.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch05",
+        .root_module = root_module,
     });
 
     { // library: mpc
@@ -610,7 +647,7 @@ pub fn build(b: *std.Build) void {
 <h2 id="ref"><a class="header" href="#ref">Ref.</a></h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Parser_combinator">wiki: Parser Combinator</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Greenspun%27s_tenth_rule">wiki: Greenspun's tenth rule</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Greenspun%27s_tenth_rule">wiki: Greenspun’s tenth rule</a></li>
 <li><a href="https://www.youtube.com/playlist?list=PLP29wDx6QmW5yfO1LAgO8kU3aQEj8SIrU">youtube: Parser Combinators From Scratch</a>
 <ul>
 <li>javascript로 작성</li>
@@ -623,7 +660,8 @@ pub fn build(b: *std.Build) void {
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch06"><a class="header" href="#ch06">ch06</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch06"><a class="header" href="#ch06">ch06</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter6_parsing">origin</a>
 <ul>
@@ -657,10 +695,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -727,11 +765,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch06",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch06.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch06",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -761,7 +803,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch07"><a class="header" href="#ch07">ch07</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch07"><a class="header" href="#ch07">ch07</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter7_evaluation">origin</a>
 <ul>
@@ -808,10 +851,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -919,11 +962,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch07",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch07.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch07",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -953,7 +1000,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch08"><a class="header" href="#ch08">ch08</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch08"><a class="header" href="#ch08">ch08</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter8_error_handling">origin</a>
 <ul>
@@ -984,10 +1032,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -1164,11 +1212,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch08",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch08.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch08",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -1198,7 +1250,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch09"><a class="header" href="#ch09">ch09</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch09"><a class="header" href="#ch09">ch09</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter9_s_expressions">origin</a>
 <ul>
@@ -1270,10 +1323,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -1340,7 +1393,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -1380,7 +1433,9 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -1404,7 +1459,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -1413,7 +1468,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -1422,7 +1477,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -1432,7 +1487,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -1607,11 +1662,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch09",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch09.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch09",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -1641,7 +1700,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch10"><a class="header" href="#ch10">ch10</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch10"><a class="header" href="#ch10">ch10</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter10_q_expressions">origin</a>
 <ul>
@@ -1703,10 +1763,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -1789,7 +1849,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -1832,7 +1892,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -1867,7 +1928,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -1876,7 +1937,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -1885,7 +1946,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -1895,7 +1956,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -1905,7 +1966,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -1913,7 +1974,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -2192,11 +2253,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch10",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch10.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch10",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -2226,7 +2291,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch11"><a class="header" href="#ch11">ch11</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch11"><a class="header" href="#ch11">ch11</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter11_variables">origin</a>
 <ul>
@@ -2272,10 +2338,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -2385,7 +2451,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -2410,10 +2476,10 @@ const Lval = struct {
                 x.BuiltinOrNull = v.BuiltinOrNull;
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -2460,7 +2526,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -2495,7 +2562,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -2504,7 +2571,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -2513,7 +2580,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -2523,7 +2590,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -2533,7 +2600,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -2541,7 +2608,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -2549,7 +2616,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -2564,8 +2631,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         return ret;
     }
 
@@ -2575,12 +2642,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -2613,8 +2680,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Eval(e: *Lenv, v: *Lval) *Lval {
@@ -2944,11 +3011,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch11",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch11.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch11",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -2978,7 +3049,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch12"><a class="header" href="#ch12">ch12</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch12"><a class="header" href="#ch12">ch12</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter12_functions">origin</a>
 <ul>
@@ -3043,10 +3115,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -3171,7 +3243,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -3203,10 +3275,10 @@ const Lval = struct {
                 }
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -3261,7 +3333,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -3295,7 +3368,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -3304,7 +3377,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -3313,7 +3386,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -3323,7 +3396,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -3333,7 +3406,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -3341,7 +3414,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -3349,7 +3422,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -3358,7 +3431,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -3378,8 +3451,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -3391,12 +3464,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -3408,12 +3481,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -3450,8 +3523,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {
@@ -3890,11 +3963,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch12",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch12.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch12",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -3924,7 +4001,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch13"><a class="header" href="#ch13">ch13</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch13"><a class="header" href="#ch13">ch13</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter13_conditionals">origin</a>
 <ul>
@@ -3960,10 +4038,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -4088,7 +4166,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -4120,10 +4198,10 @@ const Lval = struct {
                 }
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -4178,7 +4256,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -4249,7 +4328,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -4258,7 +4337,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -4267,7 +4346,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -4277,7 +4356,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -4287,7 +4366,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -4295,7 +4374,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -4303,7 +4382,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -4312,7 +4391,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -4332,8 +4411,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -4345,12 +4424,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -4362,12 +4441,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -4404,8 +4483,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {
@@ -4942,11 +5021,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch13",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch13.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch13",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -4976,7 +5059,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch14"><a class="header" href="#ch14">ch14</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch14"><a class="header" href="#ch14">ch14</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter14_strings">origin</a>
 <ul>
@@ -5015,10 +5099,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -5149,7 +5233,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -5184,10 +5268,10 @@ const Lval = struct {
                 x.Str = allocator.dupe(u8, v.Str) catch unreachable;
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -5245,7 +5329,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -5329,7 +5414,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -5338,7 +5423,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -5347,7 +5432,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -5357,7 +5442,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -5367,7 +5452,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -5375,7 +5460,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -5383,7 +5468,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -5392,7 +5477,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -5404,7 +5489,7 @@ fn lval_str(s: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .STR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Str = allocator.dupe(u8, s) catch unreachable;
     return v;
 }
@@ -5421,8 +5506,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -5434,12 +5519,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -5451,12 +5536,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -5493,8 +5578,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {
@@ -6149,11 +6234,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch14",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch14.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch14",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -6183,7 +6272,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch15"><a class="header" href="#ch15">ch15</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch15"><a class="header" href="#ch15">ch15</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter15_standard_library">origin</a>
 <ul>
@@ -6227,10 +6317,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -6361,7 +6451,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -6396,10 +6486,10 @@ const Lval = struct {
                 x.Str = allocator.dupe(u8, v.Str) catch unreachable;
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -6457,7 +6547,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -6541,7 +6632,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -6550,7 +6641,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -6559,7 +6650,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -6569,7 +6660,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -6579,7 +6670,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -6587,7 +6678,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -6595,7 +6686,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -6604,7 +6695,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -6616,7 +6707,7 @@ fn lval_str(s: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .STR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Str = allocator.dupe(u8, s) catch unreachable;
     return v;
 }
@@ -6633,8 +6724,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -6646,12 +6737,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -6663,12 +6754,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -6705,8 +6796,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {
@@ -7361,11 +7452,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch15",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch15.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch15",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -7395,7 +7490,8 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ch16"><a class="header" href="#ch16">ch16</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ch16"><a class="header" href="#ch16">ch16</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/chapter16_bonus_projects">origin</a></li>
 </ul>
@@ -7403,7 +7499,8 @@ pub fn build(b: *std.Build) void {
 <ul>
 <li>lispy를 더 확장시키기 위한 아이디어들 소개</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="appendix_a_hand_rolled_parser"><a class="header" href="#appendix_a_hand_rolled_parser">appendix_a_hand_rolled_parser</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="appendix_a_hand_rolled_parser"><a class="header" href="#appendix_a_hand_rolled_parser">appendix_a_hand_rolled_parser</a></h1>
 <ul>
 <li><a href="https://www.buildyourownlisp.com/appendix_a_hand_rolled_parser">origin</a>
 <ul>
@@ -7451,10 +7548,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&amp;buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    const reader = &amp;stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -7585,7 +7682,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -7620,10 +7717,10 @@ const Lval = struct {
                 x.Str = allocator.dupe(u8, v.Str) catch unreachable;
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -7681,7 +7778,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -7754,7 +7852,7 @@ const Lval = struct {
         std.debug.print("\"", .{});
         for (v.Str) |ch| {
             if (std.mem.indexOfScalar(u8, lval_str_escapable, ch) != null) {
-                std.debug.print("{c}", .{lval_str_escape(ch)});
+                std.debug.print("{s}", .{lval_str_escape(ch)});
             } else {
                 std.debug.print("{c}", .{ch});
             }
@@ -7767,7 +7865,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -7776,7 +7874,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -7785,7 +7883,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -7795,7 +7893,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -7805,7 +7903,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -7813,7 +7911,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -7821,7 +7919,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -7830,7 +7928,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -7842,7 +7940,7 @@ fn lval_str(s: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .STR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Str = allocator.dupe(u8, s) catch unreachable;
     return v;
 }
@@ -7859,8 +7957,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -7872,12 +7970,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -7889,12 +7987,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -7931,8 +8029,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {
@@ -8515,16 +8613,16 @@ fn lval_read_sym(s: []const u8, i_ptr: *usize) *Lval {
     const allocator = std.heap.page_allocator;
     const valid_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_+-*\\/=&lt;&gt;!&amp;";
 
-    var part = std.ArrayList(u8).init(allocator);
-    defer part.deinit();
+    var part = std.ArrayList(u8).empty;
+    defer part.deinit(allocator);
 
     const len = s.len;
     while (i_ptr.* &lt; len and std.mem.indexOfScalar(u8, valid_chars, s[i_ptr.*]) != null) {
-        part.append(s[i_ptr.*]) catch unreachable;
+        part.append(allocator, s[i_ptr.*]) catch unreachable;
         i_ptr.* += 1;
     }
 
-    const part_str = part.toOwnedSlice() catch unreachable; // `[]u8` (not null-terminated)
+    const part_str = part.toOwnedSlice(allocator) catch unreachable; // `[]u8` (not null-terminated)
     defer allocator.free(part_str);
 
     var is_num = false;
@@ -8556,8 +8654,8 @@ fn lval_read_sym(s: []const u8, i_ptr: *usize) *Lval {
 
 fn lval_read_str(s: []const u8, i: *usize) *Lval {
     const allocator = std.heap.page_allocator;
-    var part = std.ArrayList(u8).init(allocator);
-    defer part.deinit();
+    var part = std.ArrayList(u8).empty;
+    defer part.deinit(allocator);
 
     i.* += 1;
 
@@ -8581,7 +8679,7 @@ fn lval_read_str(s: []const u8, i: *usize) *Lval {
             c = lval_str_unescape(esc);
         }
 
-        part.append(c) catch unreachable;
+        part.append(allocator, c) catch unreachable;
         i.* += 1;
     }
 
@@ -8672,11 +8770,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "hand_rolled_parser",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/hand_rolled_parser.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "hand_rolled_parser",
+        .root_module = root_module,
     });
 
     { // library: editline
@@ -8701,9 +8803,10 @@ pub fn build(b: *std.Build) void {
     run_step.dependOn(&amp;run_cmd.step);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="지그-노트"><a class="header" href="#지그-노트">지그 노트</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="지그-노트"><a class="header" href="#지그-노트">지그 노트</a></h1>
 <ul>
-<li>Zig는 "모던한 C와 C++ 사이"쯤 되는 언어로 설계됨
+<li>Zig는 “모던한 C와 C++ 사이“쯤 되는 언어로 설계됨
 <ul>
 <li><a href="https://discord.com/invite/zig">discord</a>에서 정보/질답이 활발이 일어나는듯 하다</li>
 <li><a href="https://ziglang.org/learn/getting-started/">공식 가이드</a></li>
@@ -8725,7 +8828,7 @@ pub fn build(b: *std.Build) void {
 <ul>
 <li>모던한 c와 c++의 중간쯤? 되는 언어같다.
 <ul>
-<li>"필요할 때만 명시적으로 작성하고, 나머지는 생략해도 이해되게 만들자."</li>
+<li>“필요할 때만 명시적으로 작성하고, 나머지는 생략해도 이해되게 만들자.”</li>
 <li>포인터 문법, 기타 문자열 다루는데 있어 어색함.</li>
 <li>cffi가 엄청 단순해서 맘에듬.</li>
 </ul>
@@ -8751,7 +8854,7 @@ pub fn build(b: *std.Build) void {
 </li>
 <li>&amp;T라는 타입이 없음
 <ul>
-<li>&amp;는 오직 "주소 취득"</li>
+<li>&amp;는 오직 “주소 취득”</li>
 <li>함수 인자를 받을 때 포인터 타입 *T 또는 *const T로 명시합니다.</li>
 </ul>
 </li>
@@ -8863,17 +8966,28 @@ const stdout = std.io.getStdOut().writer();
 try stdout.print("Lispy Version 0.0.0.0.1\n", .{});
 </code></pre>
 <h2 id="wrapping-operator"><a class="header" href="#wrapping-operator">Wrapping Operator</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Normal Operator</th><th>Wrapping Operator</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Normal Operator</th><th>Wrapping Operator</th></tr>
+</thead>
+<tbody>
 <tr><td>+</td><td>+%</td></tr>
 <tr><td>-</td><td>-%</td></tr>
 <tr><td>*</td><td>*%</td></tr>
 <tr><td>+=</td><td>+%=</td></tr>
 <tr><td>-=</td><td>-%=</td></tr>
 <tr><td>*=</td><td>*%=</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h2 id="zig-타입"><a class="header" href="#zig-타입">Zig 타입</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Zig 타입</th><th>C와의 대응</th><th>의미</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Zig 타입</th><th>C와의 대응</th><th>의미</th></tr>
+</thead>
+<tbody>
 <tr><td>u8</td><td>uint8_t 혹은 std::byte</td><td>unsigned 8-bit integer</td></tr>
 <tr><td><code>*u8</code></td><td><code>uint8_t*</code></td><td>단일 <code>u8</code>을 가리키는 포인터</td></tr>
 <tr><td><code>[]u8</code></td><td>C에는 직접 대응 없음 (Zig 슬라이스)</td><td>길이 포함한 슬라이스</td></tr>
@@ -8881,12 +8995,20 @@ try stdout.print("Lispy Version 0.0.0.0.1\n", .{});
 <tr><td><code>[:0]u8</code></td><td><code>const char*</code></td><td>null-terminated C string (읽기 전용)</td></tr>
 <tr><td><code>[*c]u8</code></td><td><code>uint8_t*</code> 또는 <code>char*</code></td><td>C 호환 raw pointer</td></tr>
 <tr><td><code>*const [N]u8</code></td><td><code>const uint8_t[N]*</code></td><td>길이 고정된 배열의 포인터</td></tr>
-</tbody></table>
-</div><div class="table-wrapper"><table><thead><tr><th>기능</th><th>C++</th><th>Zig 대응</th></tr></thead><tbody>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>기능</th><th>C++</th><th>Zig 대응</th></tr>
+</thead>
+<tbody>
 <tr><td><code>char * const</code></td><td>포인터 고정, 내용 수정 가능</td><td>❌ 직접 불가 (우회 필요)</td></tr>
 <tr><td><code>const char *</code></td><td>포인터 수정 가능, 내용은 const</td><td><code>[]const u8</code></td></tr>
 <tr><td><code>const char * const</code></td><td>포인터도, 내용도 const</td><td><code>const x: []const u8</code></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <pre><code class="language-zig">u8            : one u8 value
 ?u8           : one optional u8 value
@@ -9039,7 +9161,7 @@ pub fn main() !void {
     std.debug.print("{s}\n", .{msg});
 }
 </code></pre>
-<p>error: expected type '[]const u8', found '[*c]u8'
+<p>error: expected type ‘[]const u8’, found ‘[*c]u8’
 const slice = std.mem.span(t.contents);</p>
 <h2 id="나누기-divtrunc-divfloor-or-divexact"><a class="header" href="#나누기-divtrunc-divfloor-or-divexact">나누기 @divTrunc, @divFloor, or @divExact</a></h2>
 <ul>
@@ -9049,22 +9171,39 @@ const slice = std.mem.span(t.contents);</p>
 </ul>
 </li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>함수</th><th>동작 방식</th><th>예시 (a / b)</th><th>결과</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>함수</th><th>동작 방식</th><th>예시 (a / b)</th><th>결과</th></tr>
+</thead>
+<tbody>
 <tr><td><code>@divTrunc</code></td><td>소수점 이하는 버리고, 부호는 무시함</td><td><code>-5 / 2</code><br><code>5 / -2</code></td><td><code>-2</code><br>`-2</td></tr>
 <tr><td><code>@divFloor</code></td><td>항상 결과를 <strong>아래쪽(-∞)</strong> 으로 내림</td><td><code>-5 / 2</code><br><code>5 / -2</code></td><td><code>-3</code><br>`-3</td></tr>
 <tr><td><code>@divExact</code></td><td>나눗셈 결과가 <strong>정확히 나누어떨어져야</strong> 함</td><td><code>5 / 2</code></td><td><code>3</code><br><strong>컴파일 에러</strong></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h2 id="할당--allocator-"><a class="header" href="#할당--allocator-">할당 ( allocator )</a></h2>
 <p>allocator.create(T)의 반환 타입은 *T</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th>함수</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>함수</th></tr>
+</thead>
+<tbody>
 <tr><td>생성 /소멸 (초기화 O)</td><td><code>allocator.create(T)</code> / <code>allocator.destroy(ptr)</code></td></tr>
 <tr><td>원시 메모리 블록 할당/해제 (초기화 X)</td><td><code>allocator.alloc(u8, n)</code> / <code>allocator.free(ptr)</code></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>const ret = allocator.create(Lenv) catch unreachable;
 ret.* = .{.A = 1}; // 디폴트 생성자 호출</p>
-<div class="table-wrapper"><table><thead><tr><th>Allocator 종류</th><th>설명</th><th>특징 및 용도</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Allocator 종류</th><th>설명</th><th>특징 및 용도</th></tr>
+</thead>
+<tbody>
 <tr><td><strong>std.heap.c_allocator</strong></td><td>C <code>malloc</code>/<code>free</code> 기반 기본 할당자</td><td>시스템 기본 메모리 할당, 범용적</td></tr>
 <tr><td><strong>std.heap.page_allocator</strong></td><td>메모리 페이지 단위 할당자</td><td>페이지 단위 메모리 관리, 큰 블록 할당에 적합</td></tr>
 <tr><td><strong>std.heap.general_purpose_allocator</strong></td><td>jemalloc 스타일 범용 할당자</td><td>중간 ~ 큰 크기 메모리 효율적 관리, 쓰레드 안전 아님</td></tr>
@@ -9075,7 +9214,8 @@ ret.* = .{.A = 1}; // 디폴트 생성자 호출</p>
 <tr><td><strong>std.heap.BuddyAllocator</strong></td><td>Buddy 메모리 할당자</td><td>단편화 감소, 큰 메모리 관리에 적합</td></tr>
 <tr><td><strong>std.heap.GeneralPurposeAllocator(.{})</strong></td><td>jemalloc 스타일 범용 할당자 (Zig 0.11+)</td><td>성능과 단편화 균형 맞춤 범용 할당자</td></tr>
 <tr><td><strong>std.testing.allocator</strong></td><td>테스트용 임시 할당자</td><td>테스트 중 메모리 할당 관리, 쉽게 리셋 가능, 메모리 누수 검출 도움</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <ul>
 <li><a href="https://zig.guide/standard-library/allocators/">https://zig.guide/standard-library/allocators/</a></li>
@@ -9089,8 +9229,8 @@ ret.* = .{.A = 1}; // 디폴트 생성자 호출</p>
 <ul>
 <li><a href="https://ziglang.org/documentation/master/std/#std.array_list.ArrayList">https://ziglang.org/documentation/master/std/#std.array_list.ArrayList</a></li>
 </ul>
-<pre><code class="language-zig">v.Cell = std.ArrayList(*Lval).init(allocator);
-v.Cell.deinit();
+<pre><code class="language-zig">v.Cell = std.ArrayList(*Lval).empty;
+v.Cell.deinit(allocator);
 </code></pre>
 <h2 id="슬라이스"><a class="header" href="#슬라이스">슬라이스</a></h2>
 <p>x[n..m]
@@ -9107,12 +9247,18 @@ Slicing includes the first element (n), but excludes the last element (m).</p>
 </ul>
 </li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>빌드 모드</th><th></th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>빌드 모드</th><th></th></tr>
+</thead>
+<tbody>
 <tr><td>Debug</td><td></td></tr>
 <tr><td>ReleaseFast</td><td></td></tr>
 <tr><td>ReleaseSmall</td><td></td></tr>
 <tr><td>ReleaseSafe</td><td></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <ul>
 <li>std.debug.print는 Release 빌드에서도 출력이 됩니다</li>
@@ -9211,7 +9357,7 @@ const stdout = std.io.getStdOut().writer();
 </li>
 </ul>
 <p>const stdout = std.io.getStdOut().writer();
-try stdout.print("{d}\n", .{x});</p>
+try stdout.print(“{d}\n”, .{x});</p>
 <h2 id="에러-try-"><a class="header" href="#에러-try-">에러 try !</a></h2>
 <p>Zig에서는 try를 쓰는 함수는 무조건 그 함수의 반환 타입에 !를 붙여야 해. 그래야 에러가 전파될 수 있거든.</p>
 <p>근데 dotnet의 try패턴이 없고 저런 함수들이 있음. 에러 반환할 수 있을거 같은데 그냥 T임..</p>
@@ -9229,7 +9375,7 @@ try stdout.print("{d}\n", .{x});</p>
     }
 </code></pre>
 <h2 id="키워드"><a class="header" href="#키워드">키워드</a></h2>
-<p>result.error는 안되고 result.@"error"</p>
+<p>result.error는 안되고 result.@“error”</p>
 <h2 id="테스트"><a class="header" href="#테스트">테스트</a></h2>
 <ul>
 <li><a href="https://zig.guide/getting-started/running-tests">https://zig.guide/getting-started/running-tests</a></li>
@@ -9276,12 +9422,18 @@ zig build-exe main.zig -femit-docs
 </ul>
 <h3 id="이상하네"><a class="header" href="#이상하네">이상하네</a></h3>
 <p>타입이 붙었다 때였나</p>
-<p>const stdin = std.io.getStdIn().reader();</p>
-<p>@TypeOf(...)
+<p>const stdin = std.io.getStdIn().reader();
+&gt;&gt;
+var stdin_buffer: [1024]u8 = undefined;
+var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+const reader = &amp;stdin_reader.interface;
+const line = reader.takeDelimiterExclusive(‘\n’) catch unreachable;</p>
+<p>@TypeOf(…)
 const Reader = @TypeOf(std.io.getStdIn().reader());
 const stdin: Reader = std.io.getStdIn().reader();</p>
 <p>제네릭 타입 인자로 함수 포인터(function pointer)를 넘기는 것도 가능해</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="vs-code"><a class="header" href="#vs-code">VS Code</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="vs-code"><a class="header" href="#vs-code">VS Code</a></h1>
 <ul>
 <li><a href="https://zig.news/pm/zig-multi-project-workflow-in-vs-code-with-dynamic-debugbuild-and-one-tasksjson-to-rule-them-all-ka7">VSCode 연동 및 작업 흐름</a></li>
 </ul>
@@ -9351,13 +9503,14 @@ const stdin: Reader = std.io.getStdIn().reader();</p>
     "configurations": [
         {
             "name": "Launch",
-            // "type": "cppvsdbg", // for Windows
-            "type": "lldb", // for Linux | macOs
+            "type": "cppvsdbg", // for Windows
+            // "type": "lldb", // for Linux | macOs
             "request": "launch",
-            "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}",
+            "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}.exe", // for Windows
+            // "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}.", // for Linux | macOs
             "args": [
                 // "hello_world.lspy",
-                "prelude.lspy",
+                // "prelude.lspy",
             ],
             "cwd": "${workspaceFolder}/lispy-zig/${input:targetProject}",
             // "stopAtEntry": false,
@@ -9365,20 +9518,37 @@ const stdin: Reader = std.io.getStdIn().reader();</p>
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": "build",
             "console": "integratedTerminal",
+            // "console": "externalTerminal",
         }
     ],
 }
 </code></pre>
-<div class="table-wrapper"><table><thead><tr><th>launch.json - "console"</th><th>입력 지원</th><th>출력 위치</th><th>새 창 여부</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>launch.json - “console”</th><th>입력 지원</th><th>출력 위치</th><th>새 창 여부</th></tr>
+</thead>
+<tbody>
 <tr><td><code>internalConsole</code></td><td>❌</td><td>디버그 콘솔 (출력만)</td><td>X</td></tr>
 <tr><td><code>integratedTerminal</code></td><td>✅</td><td>VSCode 내 터미널</td><td>X</td></tr>
 <tr><td><code>externalTerminal</code></td><td>✅</td><td>OS 외부 터미널 창</td><td>O</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h4 id="vscodesettingsjson"><a class="header" href="#vscodesettingsjson">.vscode/settings.json</a></h4>
 <pre><code class="language-json">// file: .vscode/settings.json
 {
-    "zig.zls.enabled": "on"
+    "zig.zls.enabled": "on",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.idea": true,
+        "**/zig-out": true,
+        "**/.zig-cache": true,
+    }
 }
 </code></pre>
 <h4 id="vscodetasksjson"><a class="header" href="#vscodetasksjson">.vscode/tasks.json</a></h4>
@@ -9445,6 +9615,11 @@ const stdin: Reader = std.io.getStdIn().reader();</p>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -9453,13 +9628,13 @@ const stdin: Reader = std.io.getStdIn().reader();</p>
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-3d8021b2.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
