@@ -18,10 +18,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    const reader = &stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator

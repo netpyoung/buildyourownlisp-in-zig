@@ -4,7 +4,7 @@ const c_mpc = @cImport({
     @cInclude("mpc.h");
 });
 
-const fpt_Free = *const fn (?*anyopaque) callconv(.C) void;
+const fpt_Free = *const fn (?*anyopaque) callconv(.c) void;
 
 fn doge_code() void {
     const Adjective: ?*c_mpc.mpc_parser_t = c_mpc.mpc_or(

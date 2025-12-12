@@ -4,11 +4,15 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const exe = b.addExecutable(.{
-        .name = "ch06",
+    const root_module = b.createModule(.{
         .root_source_file = b.path("src/ch06.zig"),
         .target = target,
         .optimize = optimize,
+    });
+
+    const exe = b.addExecutable(.{
+        .name = "ch06",
+        .root_module = root_module,
     });
 
     { // library: editline

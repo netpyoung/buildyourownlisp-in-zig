@@ -24,10 +24,10 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
 
     std.debug.print("{s}", .{prompt});
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    const reader = &stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -158,7 +158,7 @@ const Lval = struct {
         for (v.Cell.items) |item| {
             item.Dispose();
         }
-        v.Cell.deinit();
+        v.Cell.deinit(allocator);
         allocator.destroy(v);
     }
 
@@ -193,10 +193,10 @@ const Lval = struct {
                 x.Str = allocator.dupe(u8, v.Str) catch unreachable;
             },
         }
-        x.Cell = std.ArrayList(*Lval).init(allocator);
+        x.Cell = std.ArrayList(*Lval).empty;
         for (v.Cell.items) |item| {
             const copied = item.Clone();
-            x.Cell.append(copied) catch unreachable;
+            x.Cell.append(allocator, copied) catch unreachable;
         }
         return x;
     }
@@ -254,7 +254,8 @@ const Lval = struct {
     fn Add(v: *Lval, x: *Lval) *Lval {
         assert(v.Type == .SEXPR or v.Type == .QEXPR);
 
-        v.Cell.append(x) catch unreachable;
+        const allocator = std.heap.page_allocator;
+        v.Cell.append(allocator, x) catch unreachable;
         return v;
     }
 
@@ -338,7 +339,7 @@ fn lval_num(x: i64) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .NUM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Num = x;
     return v;
 }
@@ -347,7 +348,7 @@ fn lval_err(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Err = allocator.dupe(u8, msg) catch unreachable;
     return v;
 }
@@ -356,7 +357,7 @@ fn lval_err_format(comptime fmt: []const u8, args_fmt: anytype) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .ERR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     const formatted = std.fmt.allocPrint(allocator, fmt, args_fmt) catch unreachable;
     v.Err = formatted;
     return v;
@@ -366,7 +367,7 @@ fn lval_sym(msg: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch undefined;
     v.Type = .SYM;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
 
     v.Sym = allocator.dupe(u8, msg) catch unreachable;
     return v;
@@ -376,7 +377,7 @@ fn lval_sexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .SEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -384,7 +385,7 @@ fn lval_qexpr() *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .QEXPR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     return v;
 }
 
@@ -392,7 +393,7 @@ fn lval_fun(func: *const lbuiltin) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = func;
     return v;
 }
@@ -401,7 +402,7 @@ fn lval_lambda(formals: *Lval, body: *Lval) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .FUN;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.BuiltinOrNull = null;
     v.Env = Lenv.Init();
     v.Formals = formals;
@@ -413,7 +414,7 @@ fn lval_str(s: []const u8) *Lval {
     const allocator = std.heap.page_allocator;
     const v = allocator.create(Lval) catch unreachable;
     v.Type = .STR;
-    v.Cell = std.ArrayList(*Lval).init(allocator);
+    v.Cell = std.ArrayList(*Lval).empty;
     v.Str = allocator.dupe(u8, s) catch unreachable;
     return v;
 }
@@ -430,8 +431,8 @@ const Lenv = struct {
     pub fn Init() *Lenv {
         const allocator = std.heap.page_allocator;
         const ret = allocator.create(Lenv) catch unreachable;
-        ret.Syms = std.ArrayList([]const u8).init(allocator);
-        ret.Vals = std.ArrayList(*Lval).init(allocator);
+        ret.Syms = std.ArrayList([]const u8).empty;
+        ret.Vals = std.ArrayList(*Lval).empty;
         ret.ParentOrNull = null;
         return ret;
     }
@@ -443,12 +444,12 @@ const Lenv = struct {
 
         for (e.Syms.items) |item| {
             const newSym = allocator.dupe(u8, item) catch unreachable;
-            ret.Syms.append(newSym) catch unreachable;
+            ret.Syms.append(allocator, newSym) catch unreachable;
         }
 
         for (e.Vals.items) |item| {
             const newVal = item.Clone();
-            ret.Vals.append(newVal) catch unreachable;
+            ret.Vals.append(allocator, newVal) catch unreachable;
         }
 
         return ret;
@@ -460,12 +461,12 @@ const Lenv = struct {
         for (e.Syms.items) |item| {
             allocator.free(item);
         }
-        e.Syms.deinit();
+        e.Syms.deinit(allocator);
 
         for (e.Vals.items) |item| {
             item.Dispose();
         }
-        e.Vals.deinit();
+        e.Vals.deinit(allocator);
 
         allocator.destroy(e);
     }
@@ -502,8 +503,8 @@ const Lenv = struct {
         }
 
         const newSym = allocator.dupe(u8, k.Sym) catch unreachable;
-        e.Vals.append(newVal) catch unreachable;
-        e.Syms.append(newSym) catch unreachable;
+        e.Vals.append(allocator, newVal) catch unreachable;
+        e.Syms.append(allocator, newSym) catch unreachable;
     }
 
     fn Def(e: *Lenv, k: *Lval, v: *Lval) void {

@@ -13,11 +13,12 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     }
 
     std.debug.print("{s}", .{prompt});
+    // https://ziglang.org/download/0.15.1/release-notes.html#New-stdIoWriter-and-stdIoReader-API
 
-    const stdin = std.io.getStdIn().reader();
-
-    var buffer: [1024]u8 = undefined;
-    const line = (stdin.readUntilDelimiterOrEof(&buffer, '\n') catch unreachable).?;
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    const reader = &stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -25,7 +26,7 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     const mem = std.c.malloc(total_len).?;
     const out: [*c]u8 = @ptrCast(mem);
 
-    @memcpy(out[0..len], line);
+    @memcpy(out[0..len], line[0..len]);
     out[len] = 0; // null terminator
 
     return out;

@@ -349,8 +349,8 @@ ret.* = .{.A = 1}; // 디폴트 생성자 호출
 - <https://ziglang.org/documentation/master/std/#std.array_list.ArrayList>
 
 ``` zig
-v.Cell = std.ArrayList(*Lval).init(allocator);
-v.Cell.deinit();
+v.Cell = std.ArrayList(*Lval).empty;
+v.Cell.deinit(allocator);
 ```
 
 
@@ -565,6 +565,11 @@ zig build-exe main.zig -femit-docs
 타입이 붙었다 때였나
 
 const stdin = std.io.getStdIn().reader();
+    >>
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    const reader = &stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
 @TypeOf(...)	
 const Reader = @TypeOf(std.io.getStdIn().reader());

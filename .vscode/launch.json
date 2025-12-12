@@ -29,13 +29,14 @@
     "configurations": [
         {
             "name": "Launch",
-            // "type": "cppvsdbg", // for Windows
-            "type": "lldb", // for Linux | macOs
+            "type": "cppvsdbg", // for Windows
+            // "type": "lldb", // for Linux | macOs
             "request": "launch",
-            "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}",
+            "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}.exe", // for Windows
+            // "program": "${workspaceFolder}/lispy-zig/${input:targetProject}/zig-out/bin/${input:targetProject}.", // for Linux | macOs
             "args": [
                 // "hello_world.lspy",
-                "prelude.lspy",
+                // "prelude.lspy",
             ],
             "cwd": "${workspaceFolder}/lispy-zig/${input:targetProject}",
             // "stopAtEntry": false,
@@ -43,6 +44,7 @@
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": "build",
             "console": "integratedTerminal",
+            // "console": "externalTerminal",
         }
     ],
 }
