@@ -8,7 +8,7 @@ src = "src"
 no-section-label = true
 site-url = "/buildyourownlisp-in-zig/"
 git-repository-url = "https://github.com/netpyoung/buildyourownlisp-in-zig"
-git-repository-icon = "fa-github"
+git-repository-icon = "fab-github"
 edit-url-template = "https://github.com/netpyoung/buildyourownlisp-in-zig/edit/main/{path}"
 
 additional-css = ["theme/css/custom.css"]
