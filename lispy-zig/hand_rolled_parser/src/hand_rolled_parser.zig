@@ -1,18 +1,12 @@
 const std = @import("std");
 const module_builtin = @import("builtin");
 
-const c_libedit = if (module_builtin.os.tag != .windows) @cImport({
-    // https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
-    @cInclude("editline/readline.h");
-}) else struct {};
-
-const c_string = @cImport({
-    @cInclude("string.h");
-});
+const c_libedit = if (module_builtin.os.tag != .windows) @import("c_libedit") else struct {};
+const c_string = @import("c_string");
 
 const assert = std.debug.assert;
 
-fn readLine(prompt: [:0]const u8) [*c]u8 {
+fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
     if (module_builtin.os.tag != .windows) {
         const input: [*c]u8 = c_libedit.readline(prompt);
         return input;
@@ -21,7 +15,7 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     std.debug.print("{s}", .{prompt});
 
     var stdin_buffer: [1024]u8 = undefined;
-    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    var stdin_reader = std.Io.File.stdin().reader(io, &stdin_buffer);
     const reader = &stdin_reader.interface;
     const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
@@ -913,21 +907,23 @@ fn builtin_load(e: *Lenv, a: *Lval) *Lval {
     const filename = a.Cell.items[0].Str;
 
     // 파일 열기
-    var file = std.fs.cwd().openFile(filename, .{}) catch {
+    var threaded: std.Io.Threaded = .init_single_threaded;
+    const io = threaded.io();
+    var file = std.Io.Dir.openFile(.cwd(), io, filename, .{}) catch {
         const msg = std.fmt.allocPrint(allocator, "Could not load Library {s}", .{filename}) catch unreachable;
         a.Dispose();
         return lval_err(msg);
     };
-    defer file.close();
+    defer file.close(io);
 
     // 파일 내용 읽기
-    const stat = file.stat() catch unreachable;
+    const stat = file.stat(io) catch unreachable;
     const file_len = stat.size;
 
     var input_buf = allocator.alloc(u8, file_len + 1) catch unreachable;
     defer allocator.free(input_buf);
 
-    const read_len = file.readAll(input_buf) catch unreachable;
+    const read_len = std.Io.File.readPositionalAll(file, io, input_buf, 0) catch unreachable;
     input_buf[read_len] = 0; // null-terminator
 
     // S-expression 읽기
@@ -1197,11 +1193,8 @@ fn lval_str_unescape(x: u8) u8 {
 }
 // ===================================================
 
-pub fn main() void {
-    const allocator = std.heap.page_allocator;
-
-    const args = std.process.argsAlloc(allocator) catch unreachable;
-    defer std.process.argsFree(allocator, args);
+pub fn main(init: std.process.Init) !void {
+    const args = try init.minimal.args.toSlice(init.arena.allocator());
 
     const env = Lenv.Init();
     lenv_add_builtins(env);
@@ -1212,7 +1205,7 @@ pub fn main() void {
         std.debug.print("Press Ctrl+c to Exit\n\n", .{});
 
         while (true) {
-            const input: [*c]u8 = readLine("lispy> ");
+            const input: [*c]u8 = readLine(init.io, "lispy> ");
             defer std.c.free(input);
 
             var pos: usize = 0;
