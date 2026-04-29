@@ -10,5 +10,6 @@
         "**/.idea": true,
         "**/zig-out": true,
         "**/.zig-cache": true,
+        "**/.vs": true,
     }
 }
