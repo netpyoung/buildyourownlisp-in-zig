@@ -1,4 +1,5 @@
 .idea/
+.vs/
 
 # ref: https://github.com/github/gitignore/blob/main/Zig.gitignore
 .zig-cache/
