@@ -570,6 +570,11 @@ const stdin = std.io.getStdIn().reader();
     var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
     const reader = &stdin_reader.interface;
     const line = reader.takeDelimiterExclusive('\n') catch unreachable;
+    >> 0.16.0
+    var stdin_buffer: [1024]u8 = undefined;
+    var stdin_reader = std.Io.File.stdin().reader(io, &stdin_buffer);
+    const reader = &stdin_reader.interface;
+    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
 @TypeOf(...)	
 const Reader = @TypeOf(std.io.getStdIn().reader());
