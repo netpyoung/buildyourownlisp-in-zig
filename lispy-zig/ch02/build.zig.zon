@@ -1,7 +1,6 @@
 .{
     .name = .lispy_zig,
     .version = "0.0.0",
-
     .fingerprint = 0x1c7b4e20c66d94dc,
     .paths = .{
         "build.zig",
@@ -11,6 +10,6 @@
         //"LICENSE",
         //"README.md",
     },
-    .minimum_zig_version = "0.15.2",
+    .minimum_zig_version = "0.16.0",
     .dependencies = .{},
 }

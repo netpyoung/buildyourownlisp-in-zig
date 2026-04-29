@@ -1,16 +1,10 @@
 const std = @import("std");
 const module_builtin = @import("builtin");
 
-const c_libedit = if (module_builtin.os.tag != .windows) @cImport({
-    // https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
-    @cInclude("editline/readline.h");
-}) else struct {};
+const c_libedit = if (module_builtin.os.tag != .windows) @import("c_libedit") else struct {};
+const c_mpc = @import("c_mpc");
 
-const c_mpc = @cImport({
-    @cInclude("mpc.h");
-});
-
-fn readLine(prompt: [:0]const u8) [*c]u8 {
+fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
     if (module_builtin.os.tag != .windows) {
         const input: [*c]u8 = c_libedit.readline(prompt);
         return input;
@@ -19,7 +13,7 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     std.debug.print("{s}", .{prompt});
 
     var stdin_buffer: [1024]u8 = undefined;
-    var stdin_reader = std.fs.File.stdin().reader(&stdin_buffer);
+    var stdin_reader = std.Io.File.stdin().reader(io, &stdin_buffer);
     const reader = &stdin_reader.interface;
     const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
@@ -41,7 +35,7 @@ fn addHistory(input: [*c]u8) void {
     }
 }
 
-pub fn main() !void {
+pub fn main(init: std.process.Init) !void {
     const Number = c_mpc.mpc_new("number");
     const Operator = c_mpc.mpc_new("operator");
     const Expr = c_mpc.mpc_new("expr");
@@ -64,7 +58,7 @@ pub fn main() !void {
     std.debug.print("Press Ctrl+c to Exit\n\n", .{});
 
     while (true) {
-        const input = readLine("lispy> ");
+        const input = readLine(init.io, "lispy> ");
         defer std.c.free(input);
 
         addHistory(input);

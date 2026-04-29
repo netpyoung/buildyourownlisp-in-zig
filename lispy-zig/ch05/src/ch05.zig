@@ -1,8 +1,6 @@
 const std = @import("std");
 
-const c_mpc = @cImport({
-    @cInclude("mpc.h");
-});
+const c_mpc = @import("c_mpc");
 
 const fpt_Free = *const fn (?*anyopaque) callconv(.c) void;
 
