@@ -45,7 +45,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d3a90684.js";
+            window.path_to_searchindex_js = "searchindex-2408c801.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-49cc0e88.js"></script>
@@ -812,6 +812,11 @@ zig build-exe main.zig -femit-docs
 &gt;&gt;
 var stdin_buffer: [1024]u8 = undefined;
 var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+const reader = &amp;stdin_reader.interface;
+const line = reader.takeDelimiterExclusive(‘\n’) catch unreachable;
+&gt;&gt; 0.16.0
+var stdin_buffer: [1024]u8 = undefined;
+var stdin_reader = std.Io.File.stdin().reader(io, &amp;stdin_buffer);
 const reader = &amp;stdin_reader.interface;
 const line = reader.takeDelimiterExclusive(‘\n’) catch unreachable;</p>
 <p>@TypeOf(…)

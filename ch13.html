@@ -45,7 +45,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d3a90684.js";
+            window.path_to_searchindex_js = "searchindex-2408c801.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-49cc0e88.js"></script>
@@ -207,18 +207,12 @@
 <pre><code class="language-zig">const std = @import("std");
 const module_builtin = @import("builtin");
 
-const c_libedit = if (module_builtin.os.tag != .windows) @cImport({
-    // https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
-    @cInclude("editline/readline.h");
-}) else struct {};
-
-const c_mpc = @cImport({
-    @cInclude("mpc.h");
-});
+const c_libedit = if (module_builtin.os.tag != .windows) @import("c_libedit") else struct {};
+const c_mpc = @import("c_mpc");
 
 const assert = std.debug.assert;
 
-fn readLine(prompt: [:0]const u8) [*c]u8 {
+fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
     if (module_builtin.os.tag != .windows) {
         const input: [*c]u8 = c_libedit.readline(prompt);
         return input;
@@ -227,7 +221,7 @@ fn readLine(prompt: [:0]const u8) [*c]u8 {
     std.debug.print("{s}", .{prompt});
 
     var stdin_buffer: [1024]u8 = undefined;
-    var stdin_reader = std.fs.File.stdin().reader(&amp;stdin_buffer);
+    var stdin_reader = std.Io.File.stdin().reader(io, &amp;stdin_buffer);
     const reader = &amp;stdin_reader.interface;
     const line = reader.takeDelimiterExclusive('\n') catch unreachable;
 
@@ -1151,7 +1145,7 @@ fn lenv_add_builtins(e: *Lenv) void {
 
 // ===================================================
 
-pub fn main() void {
+pub fn main(init: std.process.Init) void {
     const Number = c_mpc.mpc_new("number");
     const Symbol = c_mpc.mpc_new("symbol");
     const Sexpr = c_mpc.mpc_new("sexpr");
@@ -1181,7 +1175,7 @@ pub fn main() void {
     std.debug.print("Press Ctrl+c to Exit\n\n", .{});
 
     while (true) {
-        const input: [*c]u8 = readLine("lispy&gt; ");
+        const input: [*c]u8 = readLine(init.io, "lispy&gt; ");
         defer std.c.free(input);
 
         var result: c_mpc.mpc_result_t = undefined;
@@ -1215,28 +1209,47 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
+    { // library: editline
+        if (target.result.os.tag != .windows) {
+            const translate_libedit = b.addTranslateC(.{
+                .root_source_file = b.path("src/c_libedit.h"),
+                .target = target,
+                .optimize = optimize,
+                .link_libc = true,
+            });
+
+            const libedit_module = translate_libedit.createModule();
+
+            if (target.result.os.tag == .linux) {
+                libedit_module.addIncludePath(.{ .cwd_relative = "/usr/include/" });
+            } else if (target.result.os.tag == .macos) {
+                libedit_module.addIncludePath(.{ .cwd_relative = "/opt/homebrew/include" });
+                libedit_module.addLibraryPath(.{ .cwd_relative = "/opt/homebrew/lib" });
+            }
+            libedit_module.linkSystemLibrary("edit", .{});
+            root_module.addImport("libedit", libedit_module);
+        }
+    }
+    { // library: mpc
+        const translate_mpc = b.addTranslateC(.{
+            .root_source_file = b.path("src/c_mpc.h"),
+            .target = target,
+            .optimize = optimize,
+            .link_libc = true,
+        });
+
+        const mpc_module = translate_mpc.createModule();
+        translate_mpc.addIncludePath(.{ .cwd_relative = "../mpc" });
+        mpc_module.addCSourceFile(.{ .file = b.path("../mpc/mpc.c") });
+        root_module.addImport("c_mpc", mpc_module);
+    }
+
+    root_module.link_libc = true;
+
     const exe = b.addExecutable(.{
         .name = "ch13",
         .root_module = root_module,
     });
-
-    { // library: editline
-        if (target.result.os.tag != .windows) {
-            if (target.result.os.tag == .linux) {
-                exe.addIncludePath(.{ .cwd_relative = "/usr/include/" });
-            } else if (target.result.os.tag == .macos) {
-                exe.addIncludePath(.{ .cwd_relative = "/opt/homebrew/include" });
-                exe.addLibraryPath(.{ .cwd_relative = "/opt/homebrew/lib" });
-            }
-            exe.linkSystemLibrary("edit");
-        }
-    }
-    { // library: mpc
-        exe.addIncludePath(.{ .cwd_relative = "../mpc/" });
-        exe.addCSourceFile(.{ .file = b.path("../mpc/mpc.c") });
-        exe.linkLibC();
-    }
-    exe.linkLibC();
 
     // zig-out/bin/ 아래에 실행파일을 복사해 줌.
     b.installArtifact(exe);
