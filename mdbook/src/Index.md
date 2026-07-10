@@ -11,6 +11,8 @@ $ zig version
 0.16.0
 ```
 
+CFFI(C Foreign Function Interface) 연습겸, 구현부를 제외한 mpc/libedit/string 부분은 그대로 쓰기로함. zig는 c연동을 신경써서 그런지 비교적 무난하게 적용할 수 있었음.
+
 ## 0.15.x
 
 - https://dev.to/bkataru/zig-0151-io-overhaul-understanding-the-new-readerwriter-interfaces-30oe

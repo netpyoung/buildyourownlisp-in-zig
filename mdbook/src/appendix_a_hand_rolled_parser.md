@@ -23,6 +23,17 @@
 {{#include ../../lispy-zig/hand_rolled_parser/src/hand_rolled_parser.zig}}
 ```
 
+## src/c_libedit.h
+
+``` zig
+{{#include ../../lispy-zig/hand_rolled_parser/src/c_libedit.h}}
+```
+
+## src/c_string.h
+
+``` zig
+{{#include ../../lispy-zig/hand_rolled_parser/src/c_string.h}}
+```
 
 ## build.zig
 
