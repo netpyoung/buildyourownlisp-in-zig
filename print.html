@@ -25,8 +25,8 @@
         <link rel="icon" href="favicon-de23e50b.svg">
         <link rel="shortcut icon" href="favicon-8114d1fc.png">
         <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
         <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -46,10 +46,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-29268b9f.js";
+            window.path_to_searchindex_js = "searchindex-596a7af9.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-49cc0e88.js"></script>
+        <script src="toc-04de5aca.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -200,6 +200,7 @@
 <pre><code class="language-sh">$ zig version
 0.16.0
 </code></pre>
+<p>CFFI(C Foreign Function Interface) 연습겸, 구현부를 제외한 mpc/libedit/string 부분은 그대로 쓰기로함. zig는 c연동을 신경써서 그런지 비교적 무난하게 적용할 수 있었음.</p>
 <h2 id="015x"><a class="header" href="#015x">0.15.x</a></h2>
 <ul>
 <li>https://dev.to/bkataru/zig-0151-io-overhaul-understanding-the-new-readerwriter-interfaces-30oe</li>
@@ -479,6 +480,10 @@ test "string test" {
     try expectEqualStrings(z_str, c_str);
 }
 </code></pre>
+<h2 id="srcc_libedith"><a class="header" href="#srcc_libedith">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
+</code></pre>
 <h2 id="buildzig-2"><a class="header" href="#buildzig-2">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
 
@@ -621,6 +626,9 @@ pub fn main() !void {
     doge_code();
     doge_grammar();
 }
+</code></pre>
+<h2 id="srcc_mpch"><a class="header" href="#srcc_mpch">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
 </code></pre>
 <h2 id="buildzig-3"><a class="header" href="#buildzig-3">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -772,6 +780,13 @@ pub fn main(init: std.process.Init) !void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-1"><a class="header" href="#srcc_mpch-1">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-1"><a class="header" href="#srcc_libedith-1">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-4"><a class="header" href="#buildzig-4">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -982,6 +997,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-2"><a class="header" href="#srcc_mpch-2">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-2"><a class="header" href="#srcc_libedith-2">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-5"><a class="header" href="#buildzig-5">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -1245,6 +1267,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-3"><a class="header" href="#srcc_mpch-3">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-3"><a class="header" href="#srcc_libedith-3">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-6"><a class="header" href="#buildzig-6">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -1708,6 +1737,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-4"><a class="header" href="#srcc_mpch-4">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-4"><a class="header" href="#srcc_libedith-4">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-7"><a class="header" href="#buildzig-7">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -2312,6 +2348,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-5"><a class="header" href="#srcc_mpch-5">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-5"><a class="header" href="#srcc_libedith-5">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-8"><a class="header" href="#buildzig-8">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -3083,6 +3126,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-6"><a class="header" href="#srcc_mpch-6">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-6"><a class="header" href="#srcc_libedith-6">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-9"><a class="header" href="#buildzig-9">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -4048,6 +4098,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-7"><a class="header" href="#srcc_mpch-7">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-7"><a class="header" href="#srcc_libedith-7">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-10"><a class="header" href="#buildzig-10">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -5119,6 +5176,13 @@ pub fn main(init: std.process.Init) void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-8"><a class="header" href="#srcc_mpch-8">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-8"><a class="header" href="#srcc_libedith-8">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
 </code></pre>
 <h2 id="buildzig-11"><a class="header" href="#buildzig-11">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -6339,6 +6403,16 @@ pub fn main(init: std.process.Init) !void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-9"><a class="header" href="#srcc_mpch-9">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-9"><a class="header" href="#srcc_libedith-9">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
+</code></pre>
+<h2 id="srcc_stringh"><a class="header" href="#srcc_stringh">src/c_string.h</a></h2>
+<pre><code class="language-zig">#include &lt;string.h&gt;
 </code></pre>
 <h2 id="buildzig-12"><a class="header" href="#buildzig-12">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -7574,6 +7648,16 @@ pub fn main(init: std.process.Init) !void {
         }
     }
 }
+</code></pre>
+<h2 id="srcc_mpch-10"><a class="header" href="#srcc_mpch-10">src/c_mpc.h</a></h2>
+<pre><code class="language-zig">#include "mpc.h"
+</code></pre>
+<h2 id="srcc_libedith-10"><a class="header" href="#srcc_libedith-10">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
+</code></pre>
+<h2 id="srcc_stringh-1"><a class="header" href="#srcc_stringh-1">src/c_string.h</a></h2>
+<pre><code class="language-zig">#include &lt;string.h&gt;
 </code></pre>
 <h2 id="buildzig-13"><a class="header" href="#buildzig-13">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
@@ -8915,6 +8999,13 @@ pub fn main(init: std.process.Init) !void {
     }
 }
 </code></pre>
+<h2 id="srcc_libedith-11"><a class="header" href="#srcc_libedith-11">src/c_libedit.h</a></h2>
+<pre><code class="language-zig">// https://salsa.debian.org/debian/libedit/-/blob/master/src/editline/readline.h
+#include "editline/readline.h"
+</code></pre>
+<h2 id="srcc_stringh-2"><a class="header" href="#srcc_stringh-2">src/c_string.h</a></h2>
+<pre><code class="language-zig">#include &lt;string.h&gt;
+</code></pre>
 <h2 id="buildzig-14"><a class="header" href="#buildzig-14">build.zig</a></h2>
 <pre><code class="language-zig">const std = @import("std");
 
@@ -9809,11 +9900,11 @@ const stdin: Reader = std.io.getStdIn().reader();</p>
 
         <script src="elasticlunr-ef4e11c1.min.js"></script>
         <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="searcher-09f2665d.js"></script>
 
         <script src="clipboard-1626706a.min.js"></script>
         <script src="highlight-3d8021b2.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 
