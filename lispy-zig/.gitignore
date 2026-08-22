@@ -5,3 +5,6 @@
 .zig-cache/
 zig-out/
 *.o
+
+int/
+out/

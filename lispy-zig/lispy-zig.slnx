@@ -1,0 +1,55 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+    <Platform Name="WASM32" />
+    <Platform Name="X64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ch02/ch02.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1" Id="bdc1862c-fdb7-4a02-9906-21832b9ba9b7">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch03/ch03.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch04/ch04.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch05/ch05.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch06/ch06.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch07/ch07.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch08/ch08.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch09/ch09.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch10/ch10.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch11/ch11.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch12/ch12.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch13/ch13.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch14/ch14.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="ch15/ch15.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+  <Project Path="hand_rolled_parser/hand_rolled_parser.zigproj" Type="98e5f03a-0b5f-41b0-a3fa-df2b47b954c1">
+    <Platform Solution="*|x86" Project="Win32" />
+  </Project>
+</Solution>

@@ -11,5 +11,7 @@
         "**/zig-out": true,
         "**/.zig-cache": true,
         "**/.vs": true,
+        "**/int": true,
+        "**/out": true,
     }
 }
