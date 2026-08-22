@@ -6,7 +6,7 @@ const c_mpc = @import("c_mpc");
 
 const assert = std.debug.assert;
 
-fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
+fn readLine(io: std.Io, prompt: [:0]const u8) ![*c]u8 {
     if (module_builtin.os.tag != .windows) {
         const input: [*c]u8 = c_libedit.readline(prompt);
         return input;
@@ -17,7 +17,7 @@ fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
     var stdin_buffer: [1024]u8 = undefined;
     var stdin_reader = std.Io.File.stdin().reader(io, &stdin_buffer);
     const reader = &stdin_reader.interface;
-    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
+    const line = try reader.takeDelimiterExclusive('\n');
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -448,7 +448,7 @@ fn lval_read(t: *c_mpc.mpc_ast_t) *Lval {
 }
 
 // ===================================================
-pub fn main(init: std.process.Init) void {
+pub fn main(init: std.process.Init) !void {
     const Number = c_mpc.mpc_new("number");
     const Symbol = c_mpc.mpc_new("symbol");
     const Sexpr = c_mpc.mpc_new("sexpr");
@@ -476,7 +476,7 @@ pub fn main(init: std.process.Init) void {
     std.debug.print("Press Ctrl+c to Exit\n\n", .{});
 
     while (true) {
-        const input: [*c]u8 = readLine(init.io, "lispy> ");
+        const input: [*c]u8 = try readLine(init.io, "lispy> ");
         defer std.c.free(input);
 
         var result: c_mpc.mpc_result_t = undefined;

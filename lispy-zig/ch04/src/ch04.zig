@@ -3,7 +3,7 @@ const module_builtin = @import("builtin");
 
 const c_libedit = if (module_builtin.os.tag != .windows) @import("c_libedit") else struct {};
 
-fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
+fn readLine(io: std.Io, prompt: [:0]const u8) ![*c]u8 {
     if (module_builtin.os.tag != .windows) {
         const input: [*c]u8 = c_libedit.readline(prompt);
         return input;
@@ -15,7 +15,7 @@ fn readLine(io: std.Io, prompt: [:0]const u8) [*c]u8 {
     var stdin_buffer: [1024]u8 = undefined;
     var stdin_reader = std.Io.File.stdin().reader(io, &stdin_buffer);
     const reader = &stdin_reader.interface;
-    const line = reader.takeDelimiterExclusive('\n') catch unreachable;
+    const line = try reader.takeDelimiterExclusive('\n');
 
     const len = line.len;
     const total_len = len + 1; // +1 for null terminator
@@ -43,7 +43,7 @@ pub fn main(init: std.process.Init) !void {
     , .{});
 
     while (true) {
-        const input = readLine(init.io, "lispy> ");
+        const input = try readLine(init.io, "lispy> ");
         defer std.c.free(input);
 
         addHistory(input);
